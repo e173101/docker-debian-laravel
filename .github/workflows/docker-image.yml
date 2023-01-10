@@ -9,6 +9,9 @@ on:
 jobs:
 
   build:
+    strategy:
+      matrix:
+        image_name: ['apache', 'artisan', 'scheduler', 'scm']
 
     runs-on: ubuntu-latest
 
@@ -23,9 +26,6 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build
-      strategy:
-        matrix:
-          image_name: ['apache', 'artisan', 'scheduler', 'scm']
       uses: docker/build-push-action@v3
       with:
         context: ./${{ matrix.image_name }}
