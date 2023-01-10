@@ -7,6 +7,8 @@ RUN apt-get update && \
     php php-mysql php-xml php-mbstring php-curl \
     composer
 
+RUN composer config -g repos.packagist composer https://mirrors.aliyun.com/composer/
+
 COPY scm.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/scm.sh
 
