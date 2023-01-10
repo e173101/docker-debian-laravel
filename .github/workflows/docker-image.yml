@@ -23,7 +23,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Apache
-      working-directory: web
+      working-directory: apache
       uses: docker/build-push-action@v3
       with:
         push: true
