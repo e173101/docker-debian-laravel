@@ -25,6 +25,6 @@ jobs:
     - name: apache
       uses: docker/build-push-action@v3
       with:
-        working-directory: apache
+        context: ./apache
         push: true
         tags: ${{ secrets.DOCKERHUB_USER }}/laravel-apache:latest
