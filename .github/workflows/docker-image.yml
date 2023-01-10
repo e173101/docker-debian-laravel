@@ -22,9 +22,12 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USER }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: apache
+    - name: Build
+      strategy:
+        matrix:
+          image_name: ['apache', 'artisan', 'scheduler', 'scm']
       uses: docker/build-push-action@v3
       with:
-        context: ./apache
+        context: ./${{ matrix.image_name }}
         push: true
-        tags: ${{ secrets.DOCKERHUB_USER }}/laravel-apache:latest
+        tags: ${{ secrets.DOCKERHUB_USER }}/laravel-${{ matrix.image_name }}:latest
