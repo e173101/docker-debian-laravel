@@ -8,6 +8,8 @@ RUN apt-get update && \
     composer
 
 COPY scm.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/scm.sh
+
 WORKDIR /var/www/app
 RUN chown www-data:www-data .
 
