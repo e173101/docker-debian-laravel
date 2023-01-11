@@ -9,6 +9,7 @@ git pull --no-rebase $GIT_URL $GIT_BRANCH
 composer install
 cp .env.example .env
 php artisan key:generate
+php artisan migrate
 
 echo "========== INIT DONE =========="
 
@@ -29,8 +30,8 @@ do
 
 
         # update app
+        php artisan migrate
         php artisan view:clear
-        # php artisan migrate
 
         date
         echo "========== UPDATE END =========="
