@@ -8,6 +8,7 @@ RUN apt-get update && \
 
 WORKDIR /var/www/app
 
+RUN a2enmod rewrite
 USER www-data
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf
 
