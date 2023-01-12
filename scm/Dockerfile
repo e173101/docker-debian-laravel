@@ -5,8 +5,7 @@ RUN apt-get update && \
     apt-get install -y \
     git \
     php php-mysql php-xml php-mbstring php-curl \
-    composer \
-    nodejs npm
+    composer
 
 RUN composer config -g repos.packagist composer https://mirrors.aliyun.com/composer/
 RUN npm config set registry https://registry.npm.taobao.org

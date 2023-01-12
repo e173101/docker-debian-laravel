@@ -10,8 +10,8 @@ git pull --no-rebase $GIT_URL $GIT_BRANCH
 composer install
 
 # frontend
-npm install
-npm run dev
+# npm install
+# npm run dev
 
 # app
 cp .env.example .env # once
@@ -40,8 +40,8 @@ do
         composer install
         
         # update frontend
-        npm install
-        npm run dev
+        # npm install
+        # npm run dev
         
         # update app
         php artisan migrate
