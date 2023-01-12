@@ -8,7 +8,6 @@ RUN apt-get update && \
     composer
 
 RUN composer config -g repos.packagist composer https://mirrors.aliyun.com/composer/
-RUN npm config set registry https://registry.npm.taobao.org
 
 COPY scm.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/scm.sh
