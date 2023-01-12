@@ -9,13 +9,15 @@ git pull --no-rebase $GIT_URL $GIT_BRANCH
 # backend
 composer install
 
+# frontend
+npm install
+npm run dev
+
+# app
 cp .env.example .env # once
 php artisan key:generate # once
 php artisan migrate
 
-# frontend
-npm install
-npm run dev
 
 echo "========== INIT DONE =========="
 
@@ -41,7 +43,6 @@ do
         npm install
         npm run dev
         
-
         # update app
         php artisan migrate
         php artisan view:clear
