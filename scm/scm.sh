@@ -6,10 +6,16 @@ GIT_BRANCH=$2
 git init
 git pull --no-rebase $GIT_URL $GIT_BRANCH
 
+# backend
 composer install
-cp .env.example .env
-php artisan key:generate
+
+cp .env.example .env # once
+php artisan key:generate # once
 php artisan migrate
+
+# frontend
+npm install
+npm run dev
 
 echo "========== INIT DONE =========="
 
@@ -28,6 +34,13 @@ do
         # update code
         git pull --no-rebase https://gitee.com/yongtian/todo-pi-server.git master
 
+        # update backend
+        composer install
+        
+        # update frontend
+        npm install
+        npm run dev
+        
 
         # update app
         php artisan migrate
