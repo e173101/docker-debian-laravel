@@ -15,7 +15,7 @@ COPY scm.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/scm.sh
 
 WORKDIR /var/www/app
-RUN chown www-data:www-data .
+RUN chown -R www-data:www-data /var/www/
 
 USER www-data
 ENTRYPOINT ["scm.sh"]
