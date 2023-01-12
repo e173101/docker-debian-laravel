@@ -1,7 +1,8 @@
 FROM debian:bullseye
 
 # vendor
-RUN apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y \
     apache2 \
     php php-mysql php-xml php-mbstring php-curl
 
